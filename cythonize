@@ -1,0 +1,4 @@
+#!/bin/bash
+cython --embed $1.py
+gcc -I/usr/include/python2.7 -o $1 $1.c -lpython2.7
+

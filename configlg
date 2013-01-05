@@ -1,0 +1,20 @@
+#!/bin/bash
+xrandr --newmode "1680x1050R"  119.00  1680 1728 1760 1840  1050 1053 1059 1080 +hsync -vsync 
+xrandr --addmode DP1 "1680x1050R"
+
+#xrandr --newmode "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync
+#xrandr --addmode VGA1 "1920x1080R"
+
+xrandr --screen 0 -s 1680x1050
+#xrandr --screen 0 -s 1920x1080
+
+# Comments:
+# Get the string to put after "--newmode" by running cvt -r 1680 1050 60, and remove "Modeline"
+# The name of available monitors can be get with xrandr -q
+#
+# Good links:
+# https://wiki.ubuntu.com/X/Config/Resolution#Use%20cvt/xrandr%20tool%20to%20add%20the%20highest%20mode%20the%20LCD%20can%20do
+# http://ubuntuforums.org/showthread.php?t=1450865
+# http://ubuntu.se/archive/index.php/t-4058.html
+#
+# // Samuel,2010-04-20 
