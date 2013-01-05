@@ -1,4 +1,10 @@
 #!/bin/bash
+# If no arguments, print usage statement & exit from function
+if [[ ! "$1" ]]; then
+    echo "Usage: cythonize [filename whithout .py]"; 
+    exit 0;
+fi
 cython --embed $1.py
 gcc -I/usr/include/python2.7 -o $1 $1.c -lpython2.7
+
 
