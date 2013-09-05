@@ -4,6 +4,13 @@
 # -----------------------------------------------------
 # Author: Samuel Lampa - samuel.lampa@gmail.com
 # Dependencies: fstrcmp: http://fstrcmp.sourceforge.net
+# Install: 
+# 1. Get fstrcmp (Ubuntu: apt-get install fstrcmp)
+# 2. Place this file in a folder that is included
+#    in you path. I place it in ~/scripts and add
+#    PATH=~/script:$PATH to my ~/.bashrc file.
+# 3. Make the file executable (if it's not already):
+#    chmod u+x ffind
 # -----------------------------------------------------
 
 # Some configs
