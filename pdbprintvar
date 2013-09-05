@@ -1,0 +1,17 @@
+#!/bin/bash
+if [[ (-z $1) || (-z $2) || (-z $3) ]]; then
+    echo "Usage: pdbprintvar [scriptname] [variable_name] [number of steps to print]"
+    exit 1
+fi;
+script=$1
+varname=$2
+stepscnt=$3
+echo "Debugging $script for instances of $varname ..."
+tmpscript=.pdbscript.tmp
+grep -n $varname $script|awk -F: '{ print "b " $1 }' > $tmpscript
+for i in $(seq 1 2); do
+    echo "next" >> $tmpscript
+    echo "print $varname" >> $tmpscript
+    echo "continue" >> $tmpscript
+done;
+pdb $script < $tmpscript
